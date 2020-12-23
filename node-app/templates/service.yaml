@@ -1,0 +1,16 @@
+# Service - LoadBalancer
+# # pb-service -lb.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-service
+  labels:
+    app: node-app
+spec:
+  selector:
+    app: node-app
+  type: LoadBalancer
+  ports:
+  - nodePort: 32750
+    port: 3000
+    targetPort: 3000
